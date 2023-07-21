@@ -126,10 +126,42 @@ console.log(validarTiempo("20:22"))
  *
  */
 
+function validarNacimiento(nacimiento) {
+    const nacer = nacimiento.trim();
+    const pattern = /^([0][1-9]|[12][0-9]|3[01])(\/|-)([0][1-9]|[1][0-2])\2(\d{4})(\s)([0-1][1-9]|[2][0-3])(:)([0-5][0-9])$/;
+    //console.log("sin limpiar: ", nacimiento, " y limpio: ", nacer)
+    if (typeof nacer !== 'string' || nacer === "" || !pattern.test(nacer)) {
+        console.log("entro en el if")
+        return false
+    } else {
+        return true
+    }
+}
+
+console.log(validarNacimiento("28-02-2002 17:04"))
+console.log(validarNacimiento("28-febrero-2002 17:04"))
+console.log(validarNacimiento("28-02-20 02 17:04"))
+
 //7 Validar Mes.
 /**
  *
  */
+
+function validarMes(mes) {
+    const meses = mes.trim();
+    const pattern = /^([0-9]{4,})([-])([12][0-9]{2,}))/;
+    //console.log("sin limpiar: ", mes, " y limpio: ", meses)
+    if (typeof meses !== 'string' || meses === "" || !pattern.test(meses)) {
+        console.log("entro en el if")
+        return false
+    } else {
+        return true
+    }
+}
+
+console.log(validarMes("2023-03"))
+console.log(validarMes("2023-03-28"))
+console.log(validarMes("2023-junio"))
 
 //8 Validar Semana.
 /**
