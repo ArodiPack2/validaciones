@@ -43,7 +43,7 @@ function validarEmail(email) {
     const pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     //console.log("sin limpiar: ", email, " y limpio: ", correo)
     if (typeof correo !== 'string' || correo === "" || !pattern.test(correo)) {
-        console.log("entro en el if")
+        console.log("entro en el email")
         return false
     } else {
         return true
@@ -64,7 +64,7 @@ function validarUrl(url) {
     const pattern = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
     //console.log("sin limpiar: ", url, " y limpio: ", urlR)
     if (typeof urlR !== 'string' || urlR === "" || !pattern.test(urlR)) {
-        console.log("entro en el if")
+        console.log("entro en el url")
         return false
     } else {
         return true
@@ -86,7 +86,7 @@ function validarFecha(fecha) {
     const pattern = /^\d{4}([\-/. ])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
     //console.log("sin limpiar: ", fecha, " y limpio: ", date)
     if (typeof date !== 'string' || date === "" || !pattern.test(date)) {
-        console.log("entro en el if")
+        console.log("entro en la fecha")
         return false
     } else {
         return true
@@ -112,7 +112,7 @@ function validarTiempo(tiempo) {
     const pattern = /^(0?[1-9]|1[0-2]):[0-5][0-9]$/;
     //console.log("sin limpiar: ", tiempo, " y limpio: ", time)
     if (typeof time !== 'string' || time === "" || !pattern.test(time)) {
-        console.log("entro en el if")
+        console.log("entro en el tiempo")
         return false
     } else {
         return true
@@ -131,7 +131,7 @@ function validarNacimiento(nacimiento) {
     const pattern = /^([0][1-9]|[12][0-9]|3[01])(\/|-)([0][1-9]|[1][0-2])\2(\d{4})(\s)([0-1][1-9]|[2][0-3])(:)([0-5][0-9])$/;
     //console.log("sin limpiar: ", nacimiento, " y limpio: ", nacer)
     if (typeof nacer !== 'string' || nacer === "" || !pattern.test(nacer)) {
-        console.log("entro en el if")
+        console.log("entro en el nacimiento")
         return false
     } else {
         return true
@@ -149,24 +149,42 @@ console.log(validarNacimiento("28-02-20 02 17:04"))
 
 function validarMes(mes) {
     const meses = mes.trim();
-    const pattern = /^([0-9]{4,})([-])([12][0-9]{2,}))/;
+    const pattern = /(\b\d{1,2}\D{0,3})?\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|(Nov|Dec)(?:ember)?)\D?(\d{1,2}(st|nd|rd|th)?)?(([,.\-\/])\D?)?((19[7-9]\d|20\d{2})|\d{2})*/;
     //console.log("sin limpiar: ", mes, " y limpio: ", meses)
     if (typeof meses !== 'string' || meses === "" || !pattern.test(meses)) {
-        console.log("entro en el if")
+        console.log("entro en el mes")
         return false
     } else {
         return true
     }
 }
 
-console.log(validarMes("2023-03"))
+console.log(validarMes("Febrero de 2023"))
+console.log(validarMes("2023 de agosto"))
 console.log(validarMes("2023-03-28"))
-console.log(validarMes("2023-junio"))
+
 
 //8 Validar Semana.
 /**
  *
  */
+
+function validarSemana(semana){
+    const semanas = semana.trim();
+    const pattern = ldk;
+    //console.log("sin limpiar: ", semana, " y limpio: ", semanas)
+    if (typeof semanas !== 'string' || semanas === "" || !pattern.test(semanas)) {
+        console.log("entro en la semana")
+        return false
+    } else {
+        return true
+    }
+}
+
+
+console.log(validarSemana(""))
+console.log(validarSemana(""))
+console.log(validarSemana(""))
 
 //9 Validar un Número.
 /**
