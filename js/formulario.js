@@ -171,7 +171,7 @@ console.log(validarMes("2023-03-28"))
 
 function validarSemana(semana){
     const semanas = semana.trim();
-    const pattern = ldk;
+    const pattern = /^(?<week>(\d{2}))(?<year>(\d{2}){0,2}[-\/]?)/;
     //console.log("sin limpiar: ", semana, " y limpio: ", semanas)
     if (typeof semanas !== 'string' || semanas === "" || !pattern.test(semanas)) {
         console.log("entro en la semana")
@@ -182,11 +182,11 @@ function validarSemana(semana){
 }
 
 
-console.log(validarSemana(""))
-console.log(validarSemana(""))
-console.log(validarSemana(""))
+console.log(validarSemana("23-2022"))
+console.log(validarSemana("23, 2022"))
+console.log(validarSemana("Semana 23-2023"))
 
-//9 Validar un Número.
+//9 Validar un Número en un intervalo min -10 y max 10.
 /**
  *
  */
