@@ -193,9 +193,8 @@ console.log(validarSemana("Semana 23-2023"))
 
 function validarIntervalo(intervalo){
     const distancia = intervalo.trim();
-    const pattern = /^[+-]?((\d*\.?\d+)|(\d+\.?\d*))$/;
     //console.log("sin limpiar: ", intervalo, " y limpio: ", distancia)
-    if (typeof distancia !== 'string' || distancia === "" || distancia !== "<10" || distancia !== ">-10" || !pattern.test(distancia)) {
+    if (typeof distancia !== 'string' || distancia > 10 || distancia <-10) {
         console.log("entro en la semana")
         return false
     } else {
@@ -205,6 +204,7 @@ function validarIntervalo(intervalo){
 
 console.log(validarIntervalo("10"))
 console.log(validarIntervalo("-10"))
+console.log(validarIntervalo("-11"))
 console.log(validarIntervalo("11"))
 console.log(validarIntervalo("9"))
 
@@ -212,6 +212,8 @@ console.log(validarIntervalo("9"))
 /**
  *
  */
+
+
 
 //11 Validar Teléfono.
 /**
@@ -227,4 +229,4 @@ console.log(validarIntervalo("9"))
 //13 Validar Color.
 /**
  * 
- */
+ */ 
