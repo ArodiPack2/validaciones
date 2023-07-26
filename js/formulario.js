@@ -213,7 +213,21 @@ console.log(validarIntervalo("9"))
  *
  */
 
-
+function validarLimite(limite){
+    const limit = limite.trim();
+    //console.log("sin limpiar: ", limite, " y limpio: ",  limit)
+    if (typeof limit !== 'string' ||  limit > 10 ||  limit <= 0) {
+        console.log("entro en la el intervalo")
+        return false
+    } else {
+        return true
+    }
+}
+console.log(validarLimite("10"))
+console.log(validarLimite("-1"))
+console.log(validarLimite("9"))
+console.log(validarLimite("5"))
+console.log(validarLimite("14"))
 
 //11 Validar Teléfono.
 /**
@@ -221,10 +235,44 @@ console.log(validarIntervalo("9"))
  * Limitar la entrada de números a 9.
  */
 
+function validarTelefono(telefono){
+    const telefonos = telefono.trim();
+    const pattern = /(6|7)[ -]*([0-9][ -]*){8}/
+    if (telefonos.length < 9 || telefonos.length > 12) {
+        console.log("El número de teléfono debe tener entre 9 y 12 caracteres");
+        return false;
+    }
+    if (typeof telefonos !== 'string' || telefonos === "" || !pattern.test(telefonos)) {
+        console.log("entro en la semana")
+        return false
+    } else {
+        return true
+    }
+}
+console.log(validarTelefono("661-18-69-18"))
+console.log(validarTelefono("661186918"))
+console.log(validarTelefono("6611869181818"))
+console.log(validarTelefono("5"))
+console.log(validarTelefono("14"))
+
 //12 Validar Término de búsqueda.
 /**
  *
  */
+
+function validarBusqueda(busqueda){
+    const busquedas = busqueda.trim();
+    const pattern = /^[A-Za-z0-9\s]+$/;
+    //console.log("sin limpiar: ", busqueda, " y limpio: ", busquedas)
+    if (typeof busquedas !== 'string' || busquedas === "" || !pattern.test(busquedas)) {
+        console.log("entro en la semana")
+        return false
+    } else {
+        return true
+    }
+}
+
+console.log(validarBusqueda("Algo de 23"))
 
 //13 Validar Color.
 /**
