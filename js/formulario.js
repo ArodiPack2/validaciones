@@ -278,3 +278,18 @@ console.log(validarBusqueda("Algo de 23"))
 /**
  * 
  */ 
+
+function validarColor(color){
+    const colores = color.trim();
+    const pattern = /(#?\w{6})|(rgb\s?\(\s?(\d{1,3},\s?){2}\d{1,3}\s?\))/;
+    //console.log("sin limpiar: ", color, " y limpio: ", colores)
+    if (typeof colores !== 'string' || colores === "" || !pattern.test(colores)) {
+        console.log("entro en la semana")
+        return false
+    } else {
+        return true
+    }
+}
+
+console.log(validarColor("Azul"))
+console.log(validarColor("#952323"))
